@@ -21,34 +21,35 @@ const axios = require('axios');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.get('/animal/:name', async (req, res) => {
-  const { name } = req.params;
-
-  if (name == "cow"){
+app.get('/animal/:name', (req, res) => {
+  let { name } = req.params;
+  
+  console.log(name)
+  if (name == ":cow"){
     res.send("moo")
   }
 
-  if (name == "cat"){
+  if (name == ":cat"){
     res.send("meow")
   }
 
-  if (name == "dog"){
+  if (name == ":dog"){
     res.send("woof")
   }
 
-  if (name == "lion"){
+  if (name == ":lion"){
     res.send("roar")
   }
 
-  if (name == "bird"){
+  if (name == ":bird"){
     res.send("chirp")
   }
 
-  if (name == "bee"){
+  if (name == ":bee"){
     res.send("buzz")
   }
 
-  if (name == "elephant"){
+  if (name == ":elephant"){
     res.send("trumpets")
   }
 
