@@ -1,55 +1,42 @@
-// // Example code to fetch an animal fact
-// document.getElementById('fetchButton').addEventListener('click', async () => {
-//   const name = 'cat';
-  
-//   try {
-//     const response = await fetch(`https://your-render-subdomain.onrender.com/animal/${name}`);
-//     const data = await response.json();
-    
-//     // Display the fetched animal fact
-//     alert(`Fact about ${data.name}: ${data.fact}`);
-//   } catch (error) {
-//     console.error(error);
-//     // Handle errors if any
-//     alert('Failed to fetch animal fact. Please try again.');
-//   }
-// });
-
 const express = require('express');
 const axios = require('axios');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.get('/animal/:name', (req, res) => {
-  let { name } = req.params;
+app.get('/', (req, res) => {
+  res.send("hello")
+})
+
+app.get('/animal/:key', (req, res) => {
+  let name = req.params.key;
   
   console.log(name)
-  if (name == ":cow"){
+  if (name == "cow"){
     res.send("moo")
   }
 
-  if (name == ":cat"){
+  if (name == "cat"){
     res.send("meow")
   }
 
-  if (name == ":dog"){
+  if (name == "dog"){
     res.send("woof")
   }
 
-  if (name == ":lion"){
+  if (name == "lion"){
     res.send("roar")
   }
 
-  if (name == ":bird"){
+  if (name == "bird"){
     res.send("chirp")
   }
 
-  if (name == ":bee"){
+  if (name == "bee"){
     res.send("buzz")
   }
 
-  if (name == ":elephant"){
+  if (name == "elephant"){
     res.send("trumpets")
   }
 
